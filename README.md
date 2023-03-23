@@ -100,5 +100,73 @@ I must master it as I must master my life.
 $ gedit palomakoba_zeus.mk
 ![image](https://user-images.githubusercontent.com/75500077/226779263-28e807f5-e359-4118-bcac-edbb3e923832.png)
 
+$ m         # Não é necessário ir par ao diretório principal do AOSP
+$ emulator &       # O '&' inicia o emulador em background, liberando o uso do terminal
+$ sleep 20     # Espera o Android iniciar
+$ adb shell      # Acessa o Linux do novo Android
+![image](https://user-images.githubusercontent.com/75500077/227057766-60860b59-b085-4c9e-8301-b818d406b881.png)
+
+$ cd /system/etc/
+$ ls -al palomakoba.txt
+![image](https://user-images.githubusercontent.com/75500077/227057935-b456bfeb-872f-4f24-91f2-ad6c6cb32ae9.png)
+
+$ cat palomakoba,txt
+![image](https://user-images.githubusercontent.com/75500077/227057976-1276bd53-58df-4672-a48b-9b9b1ecec728.png)
+
+
+7.2 Modificando o Init
+
+$ gedit zeus.rc
+![image](https://user-images.githubusercontent.com/75500077/227059408-6b863519-6096-4276-915e-4a5609205915.png)
+
+$ gedit palomakoba_zeus.mk
+![image](https://user-images.githubusercontent.com/75500077/227059994-b5bd596b-41bd-4153-9efc-dd7d7cfd971d.png)
+
+$ m
+$ emulator &
+$ sleep 20
+$ adb shell
+![image](https://user-images.githubusercontent.com/75500077/227062332-063240dc-306e-47ff-9558-1316e86a526c.png)
+
+$ cd /vendor/etc/init
+$ ls -al zeus.rc
+![image](https://user-images.githubusercontent.com/75500077/227062776-c1ff9d70-4885-455f-af35-f9a62c76a68c.png)
+
+$ echo $PALOMAKOBA
+![image](https://user-images.githubusercontent.com/75500077/227062858-5a9eb3ec-a23a-4d67-8135-628b975899f6.png)
+
+$ logcat -d | grep "D Palomakoba"
+![image](https://user-images.githubusercontent.com/75500077/227063241-a15255e1-1d8e-4a05-a693-2a09fa25b637.png)
+
+
+
+7.3. Modificando Propriedades do Sistema
+
+$ gedit palomakoba_zeus.mk
+
+PRODUCT_SYSTEM_PROPERTIES += ro.palomakoba.name=Zeus
+
+PRODUCT_PRODUCT_PROPERTIES += ro.product.palomakoba.version=1.0
+
+PRODUCT_VENDOR_PROPERTIES += ro.vendor.palomakoba.hardware=ModelB
+
+$ m
+$ emulator &
+$ sleep 20
+$ adb shel
+![image](https://user-images.githubusercontent.com/75500077/227064696-44255f68-cd56-4a80-a15b-6a3155516ebf.png)
+
+$ getprop | grep -e ro.palomakoba -e ro.vendor.palomakoba -e ro.product.palomakoba
+![image](https://user-images.githubusercontent.com/75500077/227064918-dcdf210a-465d-48ad-9840-5feb37a097ba.png)
+
+
+7.4. Investigando as Propriedades do Sistema
+
+$ cat /system/build.prop | grep -e ro.palomakoba -e ro.vendor.palomakoba -e ro.product.palomakoba
+![image](https://user-images.githubusercontent.com/75500077/227065215-f0c4f132-d33f-44d6-9a5d-7d8f7332890b.png)
+
+$ cat /product/etc/build.prop | grep -e ro.palomakoba -e ro.vendor.palomakoba -e ro.product.palomakoba
+![image](https://user-images.githubusercontent.com/75500077/227065350-b77e44e5-6f22-4785-9d4a-f545537d58c6.png)
+
 
 
