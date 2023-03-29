@@ -68,7 +68,11 @@ Feche o emulador, compile o AOSP, inicie o emulador novamente. Note o novo wallp
 ![image](https://user-images.githubusercontent.com/75500077/227402910-12d8662b-0ab0-4663-a25c-c6634e0773d6.png)
 
 
+8.4. Modificando a Animação de Boot
 
+![image](https://user-images.githubusercontent.com/75500077/228390873-39229a40-a103-4901-ae30-026d5d6986da.png)
 
+8.6. Desafio II - Wallpaper
 
+![image](https://user-images.githubusercontent.com/75500077/228400745-5c475f1a-b627-4dc8-bd22-acee53bfa3bf.png)
 
