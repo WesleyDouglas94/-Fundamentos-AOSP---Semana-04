@@ -80,4 +80,37 @@ $ cd .. # volta para o diretório device/palomakoba/zeus/
 $ gedit palomakoba_zeus.mk # Inclua o que está destacado
 ![image](https://user-images.githubusercontent.com/75500077/228700130-ccdd08f0-b37a-4c9e-b233-c072c8f4c134.png)
 
+# ls -lh /vendor/lib64/libncurses.so /vendor/bin/nano
+![image](https://user-images.githubusercontent.com/75500077/228984110-e0f424de-3de4-44d1-bd97-b97671312c38.png)
+
+# nano /data/teste.txt
+![image](https://user-images.githubusercontent.com/75500077/228984257-b9ca4f7e-4c58-479e-9d9c-2f8a61de4367.png)
+
+
+9.4. Portando um Novo Programa para o Android
+
+$ sudo apt install sl
+![image](https://user-images.githubusercontent.com/75500077/228984765-cef67b77-e3b4-4017-930f-1a36666b6116.png)
+
+$ sl
+![image](https://user-images.githubusercontent.com/75500077/228984842-b8511fe1-1c2e-40c1-819f-7070619a10fc.png)
+
+$ cd /media/arquivos/aosp/device/palomakoba/zeus/external
+$ git clone https://github.com/mtoyoda/sl.git
+![image](https://user-images.githubusercontent.com/75500077/228985393-55b665e9-e03e-406f-a829-552701b316b5.png)
+
+$ gedit sl/Android.mk 
+![image](https://user-images.githubusercontent.com/75500077/228985794-0cd4d204-a333-468f-999b-3f01e7f007e9.png)
+
+$ cd .. # Volta para o diretório device/palomakoba/zeus/
+$ gedit palomakoba_zeus.mk #Inclua o que está destacado
+![image](https://user-images.githubusercontent.com/75500077/228986032-1d28bcf3-6a8f-4c61-b1f5-e929e0a8ae67.png)
+
+
+Recompile o AOSP, reinicie o emulador, entre no adb shell e execute o comando sl. Voila! Você acabou de portar um utilitário para o Android. Execute o sl. Quando ele estiver executando, tire um screenshot dele.
+![image](https://user-images.githubusercontent.com/75500077/228987781-a62bfa8c-9f7b-4851-98a6-020607dcd7a4.png)
+
+
+
+
 
